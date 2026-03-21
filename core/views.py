@@ -9,22 +9,24 @@ def index(request):
     return render(request, 'core/index.html')
 
 def about(request):
-    # myself = {"Name": "Samuel Oreofe Oritu"}
-    # return JsonResponse(myself)
-    return render(request, 'core/about.html')
+    context = {
+        "fullname" : "Samuel Oreofe Oritu"
+    }
+    return render(request, 'core/about.html', context)
 
 def contact(request):
-    # details = {"Phone Number": "2347049292634"}
-    # return JsonResponse(details)
-    return render(request, 'core/contact.html')
+    context = {
+      "mail":"Samueloritu2019@gmail.com",
+      "number":"07049292634",
+      "address":"SQI Iwo road"
+    }
+    return render(request, 'core/contact.html', context)
 
 def experience(request):
-#     me = """ 
-# SQI College of ICT
-# """
-    return render(request, 'core/experience.html')
+    context = {
+        "jobs":"Data Analyst | Django Learner | Problem Solver"
+    }
+    return render(request, 'core/experience.html', context)
 
 def blog(request):
-    # blog = "Empty"
-    # return HttpResponse(blog)
     return render(request, 'core/blog.html')
